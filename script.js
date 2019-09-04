@@ -1,4 +1,6 @@
-// navigator.getWebcam = (navigator.getUserMedia || navigator.webKitGetUserMedia || navigator.moxGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
+/*
+note:const can be for ES6 instead of var
+*/
 // const video = document.querySelector('.player');
 // const canvas = document.querySelector('.photo');
 // const ctx = canvas.getContext('2d');
@@ -40,8 +42,15 @@ function takePhoto() {
 
     //take the data from cavas
     var data = canvas.toDataURL('image/jpeg');
-    // const data
-    console.log(data);
+    // const data = canvas.toDataURL('image/jpeg');
+
+    var link = document.createElement('a');
+    // const link = document.createElement('a');
+    link.href =data;
+    link.setAttribute('download', 'handsome');
+    link.innerHTML = `<img src="${data}" alt="Handsome" />`;
+    strip.insertBefore(link, strip.firstChild);
+    
 }
 getVideo();
 
