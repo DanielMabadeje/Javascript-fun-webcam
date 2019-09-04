@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WebCam</title>
+</head>
+<body>
+    <div class="photobooth">
+        <div class="controls">
+            <button onclick="takephoto()">Take Photo</button>
+            <div class="rgb">
+                <label for="rmin">Red Min</label>
+                <input type="range" name="rmin" id="" min="0" max="255">
+                <label for="max">Red Max</label>
+                <input type="range" name="rmax" id="" min="0" max="255">
+
+                <br>
+
+                <label for="gmin">Green Min</label>
+                <input type="range" name="gmin" min="0" max="255" id="">
+                <label for="gmax">GreenMax</label>
+                <input type="range" name="gmax" min=0 max="255" id="">
+
+
+                <br>
+
+                <label for="bmin">Blue Min</label>
+                <input type="range" name="bmin" min="0" max="255" id="">
+                <label for="bmax">Blue Max</label>
+                <input type="range" name="bmax" min="0" max="255" id="">
+            </div>
+        </div>
+        <canvas class="photo"></canvas>
+        <video class="player" muted></video>
+        <div class="strip"></div>
+    </div>
+    <audio class="snap" src="http://wesbos.com/demos/photobooth/snap.mp3" hidden></audio>
+    <script src="script.js"></script>
+</body>
+</html>
