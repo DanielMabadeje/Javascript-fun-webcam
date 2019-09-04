@@ -40,7 +40,7 @@ function paintToCanvas() {
         // pixels =rgbSplit(pixels); //for drowsy feel
         // ctx.globalAlpha =0.1;//for transparent effect
 
-        pixels =greenScreen(pixels);
+        pixels =greenScreen(pixels);//for a white and black effect
         ctx.putImageData(pixels, 0, 0);
     }, 16);
 }
