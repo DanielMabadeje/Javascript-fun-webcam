@@ -1,16 +1,16 @@
 /*
 note:const can be for ES6 instead of var
 */
-// const video = document.querySelector('.player');
-// const canvas = document.querySelector('.photo');
-// const ctx = canvas.getContext('2d');
-// const strip =document.querySelector('.strip');
-// const snap =document.querySelector('.snap');
-var video = document.querySelector('.player');
-var canvas = document.querySelector('.photo');
-var ctx = canvas.getContext('2d');
-var strip =document.querySelector('.strip');
-var snap =document.querySelector('.snap');
+const video = document.querySelector('.player');
+const canvas = document.querySelector('.photo');
+const ctx = canvas.getContext('2d');
+const strip =document.querySelector('.strip');
+const snap =document.querySelector('.snap');
+// var video = document.querySelector('.player');
+// var canvas = document.querySelector('.photo');
+// var ctx = canvas.getContext('2d');
+// var strip =document.querySelector('.strip');
+// var snap =document.querySelector('.snap');
 
 function getVideo() {
     navigator.mediaDevices.getUserMedia({ video: true, audio: false })
@@ -56,7 +56,7 @@ function takePhoto() {
     // const link = document.createElement('a');
     link.href =data;
     link.setAttribute('download', 'handsome');
-    link.innerHTML = `<img src="${data}" alt="Handsome" />`;
+    link.innerHTML = '<img src="${data}" alt="Handsome" />';
     strip.insertBefore(link, strip.firstChild);
     
 }
