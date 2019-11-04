@@ -6,11 +6,6 @@ const canvas = document.querySelector('.photo');
 const ctx = canvas.getContext('2d');
 const strip =document.querySelector('.strip');
 const snap =document.querySelector('.snap');
-// var video = document.querySelector('.player');
-// var canvas = document.querySelector('.photo');
-// var ctx = canvas.getContext('2d');
-// var strip =document.querySelector('.strip');
-// var snap =document.querySelector('.snap');
 
 function getVideo() {
     navigator.mediaDevices.getUserMedia({ video: true, audio: false })
@@ -25,10 +20,8 @@ function getVideo() {
 //   .catch(e => console.error(e));
 }
 function paintToCanvas() {
-    var width =video.videoWidth;
-    var height =video.videoHeight;
-    // const width =video.videoWidth;
-    // const height =video.videoHeight;
+    const width =video.videoWidth;
+    const height =video.videoHeight;
     canvas.height =width;
     canvas.height =height;
 
@@ -49,11 +42,9 @@ function takePhoto() {
     snap.play();
 
     //take the data from cavas
-    var data = canvas.toDataURL('image/jpeg');
-    // const data = canvas.toDataURL('image/jpeg');
-
-    var link = document.createElement('a');
-    // const link = document.createElement('a');
+    const data = canvas.toDataURL('image/jpeg');
+    
+    const link = document.createElement('a');
     link.href =data;
     link.setAttribute('download', 'handsome');
     link.innerHTML = '<img src="${data}" alt="Handsome" />';
