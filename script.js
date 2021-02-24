@@ -31,10 +31,10 @@ function paintToCanvas() {
         let pixels= ctx.getImageData(0, 0, width, height);
 
         // pixels =redEffect(pixels);
-        // pixels =rgbSplit(pixels); //for drowsy feel
+         pixels =rgbSplit(pixels); //for drowsy feel
         // ctx.globalAlpha =0.1;//for transparent effect
 
-        pixels =greenScreen(pixels);//for a white and black effect
+        //pixels =greenScreen(pixels);//for a white and black effect
         ctx.putImageData(pixels, 0, 0);
     }, 16);
 }
