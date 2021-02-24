@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WebCam</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
     <div class="photobooth">
@@ -32,11 +33,13 @@
                 <input type="range" name="bmax" min="0" max="255" id="">
             </div>
         </div>
-        <canvas class="photo"></canvas>
-        <video class="player" muted></video>
+        <div class="d-md-flex">
+            <div class="col-md-6"><canvas class="photo"></canvas></div>
+            <div class="col-md-6"><video class="player" muted></video></div>
+        </div>
         <div class="strip"></div>
     </div>
-    <audio class="snap" src="http://wesbos.com/demos/photobooth/snap.mp3" hidden></audio>
+    <audio class="snap" src="https://wesbos.com/demos/photobooth/snap.mp3" hidden></audio>
     <script src="script.js"></script>
 </body>
 </html>
