@@ -7,6 +7,8 @@ const ctx = canvas.getContext('2d');
 const strip =document.querySelector('.strip');
 const snap =document.querySelector('.snap');
 
+// var pixels;
+
 function getVideo() {
     navigator.mediaDevices.getUserMedia({ video: true, audio: false })
     .then(localMediaStream => {
@@ -28,7 +30,7 @@ function paintToCanvas() {
 
    return setInterval(() => {
         ctx.drawImage(video, 0, 0, width, height);
-        let pixels= ctx.getImageData(0, 0, width, height);
+        var pixels= ctx.getImageData(0, 0, width, height);
 
         // pixels =redEffect(pixels);
          pixels =rgbSplit(pixels); //for drowsy feel
