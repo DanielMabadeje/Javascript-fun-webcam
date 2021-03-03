@@ -23,7 +23,7 @@ function getVideo() {
 function paintToCanvas() {
     const width =video.videoWidth;
     const height =video.videoHeight;
-    canvas.height =width;
+    canvas.width =width;
     canvas.height =height;
 
    return setInterval(() => {
