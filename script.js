@@ -12,15 +12,13 @@ const snap =document.querySelector('.snap');
 function getVideo() {
     navigator.mediaDevices.getUserMedia({ video: true, audio: false })
     .then(localMediaStream => {
-        console.log(localMediaStream);
+        // console.log(localMediaStream);
 //         video.src =window.URL.createObjectURL(localMediaStream);
         video.srcObject = localMediaStream
         video.play();
     }).catch(err =>{
         console.error('oh why errors!!', err);
     });
-//     .then(stream => video.srcObject = stream)
-//   .catch(e => console.error(e));
 }
 function paintToCanvas() {
     const width =video.videoWidth;
@@ -36,7 +34,7 @@ function paintToCanvas() {
          pixels =rgbSplit(pixels); //for drowsy feel
         // ctx.globalAlpha =0.1;//for transparent effect
 
-        //pixels =greenScreen(pixels);//for a white and black effect
+        // pixels =greenScreen(pixels);//for a white and black effect
         ctx.putImageData(pixels, 0, 0);
     }, 16);
 }
@@ -62,7 +60,7 @@ function redEffect(pixels) {
     }
     return pixels;
 }
-function rgbSplit(params) {
+function rgbSplit(pixels) {
     for (let i = 0; i < pixels.data.length; i+=4){
         pixels.data[i - 150] = pixels.data[i + 0] + 100; //Red
         pixels.data[i + 500] = pixels.data[i + 1] - 50; //Green
