@@ -1,0 +1,24 @@
+body{
+    height: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    position: absolute;
+}
+
+.photobooth{
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.video_canvas{
+    width: 100% !important;
+    height: 70% !important;
+}
+.canvas_div{
+    width: 100% !important;
+    height: 100% !important;
+}
+.photo{
+    width: 100% !important;
+    height: 100% !important;
+}

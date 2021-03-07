@@ -25,14 +25,16 @@ function paintToCanvas() {
     const height =video.videoHeight;
     canvas.width =width;
     canvas.height =height;
+    // canvas.height ='100%';
 
    return setInterval(() => {
         ctx.drawImage(video, 0, 0, width, height);
         var pixels= ctx.getImageData(0, 0, width, height);
 
         // pixels =redEffect(pixels);
-         pixels =rgbSplit(pixels); //for drowsy feel
+        //  pixels =rgbSplit(pixels); //for drowsy feel
         // ctx.globalAlpha =0.1;//for transparent effect
+        // transparentfilter(ctx)
 
         // pixels =greenScreen(pixels);//for a white and black effect
         ctx.putImageData(pixels, 0, 0);
@@ -91,6 +93,10 @@ function greenScreen(pixels) {
         }
     }
     return pixels;
+}
+
+function transparentfilter(ctx) {
+    // ctx.globalAlpha =0.1;//for transparent effect
 }
 getVideo();
 
