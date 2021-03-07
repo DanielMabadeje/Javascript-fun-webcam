@@ -7,7 +7,9 @@ const ctx = canvas.getContext('2d');
 const strip =document.querySelector('.strip');
 const snap =document.querySelector('.snap');
 
-// var pixels;
+var pixels=``;
+
+var filter="rgbSplit";
 
 function getVideo() {
     navigator.mediaDevices.getUserMedia({ video: true, audio: false })
@@ -29,7 +31,16 @@ function paintToCanvas() {
 
    return setInterval(() => {
         ctx.drawImage(video, 0, 0, width, height);
-        var pixels= ctx.getImageData(0, 0, width, height);
+        pixels= ctx.getImageData(0, 0, width, height);
+        if (filter !="") {
+
+            // console.log(filter)
+            filter.replace(/^"(.*)"$/, '$1')
+
+            console.log(filter+(pixels))
+            // pixels=filter(pixels)
+        }
+        
 
         // pixels =redEffect(pixels);
         //  pixels =rgbSplit(pixels); //for drowsy feel
@@ -97,6 +108,11 @@ function greenScreen(pixels) {
 
 function transparentfilter(ctx) {
     // ctx.globalAlpha =0.1;//for transparent effect
+}
+
+
+function assignFunction(params) {
+    
 }
 getVideo();
 
